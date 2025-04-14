@@ -1,2 +1,2 @@
 # Proyecto-FitLite-SPA
-Aqui ira toda la documentacion y las diferentes versiones de nuestro proyecto
+Aqui ira toda la documentación y las diferentes versiones de nuestro proyecto
