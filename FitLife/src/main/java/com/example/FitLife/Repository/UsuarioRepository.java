@@ -32,10 +32,13 @@ public class UsuarioRepository {
     }
     
     public Usuario ActualizarUsuario(Usuario user){
+        int Usuarioid = 0;
+        int IdPosicionUsuario = 0;
+
         for (int i = 0; i < ListaUsuario.size(); i++){
             if(ListaUsuario.get(i).getUsuarioId() == user.getUsuarioId()){
-                ListaUsuario.set(i,user);
-                return user;
+                Usuarioid = user.getUsuarioId();
+                IdPosicionUsuario = i;
             }
         }
         
@@ -49,6 +52,7 @@ public class UsuarioRepository {
         Usuario1.setPassword(Usuario1.getPassword());
         Usuario1.setFechaRegistro(Usuario1.getFechaRegistro());
 
+        ListaUsuario.set(IdPosicionUsuario, Usuario1);
         return Usuario1;
     }
 
@@ -58,15 +62,4 @@ public class UsuarioRepository {
             ListaUsuario.remove(usuario);
         }
     }
-
-
-
-
-
-        
-
-
-
-
-    
 }

@@ -13,8 +13,9 @@ public class Clase {
     private int idClase;
     private String nombre;
     private String descripcion;
-    private Long capacidadMaxima;
+    private int capacidadMaxima;
     private String ubicacion;
     private Date fechaHora;
     private int entrenadorId;
+    private int IdPosicionClase;
 }
