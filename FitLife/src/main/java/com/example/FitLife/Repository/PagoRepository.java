@@ -68,7 +68,7 @@ public class PagoRepository {
             }
         }
         if (idPosicion > 0) {
-            listaPagos.remove(idPosicion)
+            listaPagos.remove(idPosicion);
         }
 
         // alternative 3
