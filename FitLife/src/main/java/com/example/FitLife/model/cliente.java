@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
-public class cliente extends Usuario{
+public class Cliente extends Usuario{
     private int id;
     private ArrayList<Reservas> reservas;
     private ArrayList<Actividad> actividades;
