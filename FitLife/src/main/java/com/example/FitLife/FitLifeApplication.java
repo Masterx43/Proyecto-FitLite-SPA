@@ -9,5 +9,5 @@ public class FitLifeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FitLifeApplication.class, args);
 	}
-
+	
 }
