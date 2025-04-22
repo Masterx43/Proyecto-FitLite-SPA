@@ -6,8 +6,4 @@ public class Cliente extends Usuario {
     private String telefonoCliente;
     private String direccionCliente;
 
-
-
-
-
 }
