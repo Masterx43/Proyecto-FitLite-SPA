@@ -75,6 +75,5 @@ public class PagoRepository {
         // alternative 3
         listaPagos.removeIf(x -> x.getPagoId() == id);
     }
-
->>>>>>> 018ed10f239ffb9c108c233a558ede1d8b6285a2
+    
 }

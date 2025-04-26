@@ -11,7 +11,7 @@ import com.example.FitLife.model.Usuario;
 public class UsuarioRepository {
     private List<Usuario> ListaUsuario = new ArrayList<>();
 
-    public List<Usuario> obtenerUsuarios( ){
+    public List<Usuario> obtenerUsuarios(){
         return ListaUsuario;
     }
 
@@ -32,18 +32,18 @@ public class UsuarioRepository {
     }
     
     public Usuario ActualizarUsuario(Usuario user){
-        int Usuarioid = 0;
+        int usuarioId = 0;
         int IdPosicionUsuario = 0;
 
         for (int i = 0; i < ListaUsuario.size(); i++){
             if(ListaUsuario.get(i).getUsuarioId() == user.getUsuarioId()){
-                Usuarioid = user.getUsuarioId();
+                usuarioId = user.getUsuarioId();
                 IdPosicionUsuario = i;
             }
         }
         
         Usuario Usuario1 = new Usuario();
-        Usuario1.setUsuarioId(Usuario1.getUsuarioId());
+        Usuario1.setUsuarioId(usuarioId);
         Usuario1.setPNombre(Usuario1.getPNombre());
         Usuario1.setSNombre(Usuario1.getSNombre());
         Usuario1.setApPaterno(Usuario1.getApPaterno());
