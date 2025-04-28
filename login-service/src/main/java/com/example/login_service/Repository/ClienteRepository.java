@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.example.login_service.model.Cliente;
+import com.example.login_service.Model.Cliente;
 
 @Repository
 public class ClienteRepository {
