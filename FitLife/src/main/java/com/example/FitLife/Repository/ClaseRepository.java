@@ -37,11 +37,13 @@ public class ClaseRepository {
             if(ListaClase.get(i).getIdClase() == clase.getIdClase()){
                 idClase = clase.getIdClase();
                 IdPosicionClase = i;
+
             }
+
         }
         
         Clase Clase1 = new Clase();
-        Clase1.setIdClase(Clase1.getIdClase());
+        Clase1.setIdClase(idClase);
         Clase1.setNombre(Clase1.getNombre());
         Clase1.setDescripcion(Clase1.getDescripcion());
         Clase1.setCapacidadMaxima(Clase1.getCapacidadMaxima());

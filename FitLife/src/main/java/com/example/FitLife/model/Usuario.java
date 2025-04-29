@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Usuario {
     private int usuarioId;
     private String pNombre;
@@ -17,7 +18,8 @@ public class Usuario {
     private String apMaterno;
     private String email;
     private String password;
-    private String telefono;
-    private String direccion;
     private Date fechaRegistro;
+    private int IdPosicionUsuario;
+
+
 }
