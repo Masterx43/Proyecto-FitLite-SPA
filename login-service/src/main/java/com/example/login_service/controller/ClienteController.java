@@ -40,7 +40,7 @@ public class ClienteController {
     public ResponseEntity<String> validateCliente(@RequestBody Cliente clienteRequest) {
         boolean request = clienteService.validateCliente(clienteRequest.getEmail(), clienteRequest.getPassword());
         if (request) {
-            return ResponseEntity.ok("Cliente añadido.");
+            return ResponseEntity.ok("Cliente " + clienteRequest.getPnombre() + " añadido");
         } else{
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Error.");
         }

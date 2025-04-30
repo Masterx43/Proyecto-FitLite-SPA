@@ -25,7 +25,7 @@ public class ClienteService {
     public boolean validateCliente(String email, String password) {
         List<Cliente> clientes = clienteRepository.findAll();
         for (Cliente cliente : clientes) {
-            if (cliente.getEmail().equals(email) && cliente.getPassword().equals(password)) {
+            if (cliente.getEmail() == email && cliente.getPassword() == password) {
                 return true;
             }
         }
