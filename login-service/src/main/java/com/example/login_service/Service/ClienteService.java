@@ -23,10 +23,10 @@ public class ClienteService {
     }
 
     public boolean validateCliente(String email, String password) {
-        List<Cliente> clientes = getClientes();
+        List<Cliente> clientes = clienteRepository.findAll();
         for (Cliente cliente : clientes) {
-            if (cliente.getEmail().equals(email) && cliente.getPassword().equals(password)) {
-                return true; // esto es true porque tiene que ser true porque lo vi en stackoverflow y no sé que significa.
+            if (cliente.getEmail() == email && cliente.getPassword() == password) {
+                return true;
             }
         }
         return false;

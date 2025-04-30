@@ -23,26 +23,26 @@ public class ClienteController {
 
     @GetMapping
     public ResponseEntity<List<Cliente>> getClientes() {
-        List<Cliente> hola = clienteService.getClientes();
-        if (hola.isEmpty()) {
+        List<Cliente> clientes = clienteService.getClientes();
+        if (clientes.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
-        return ResponseEntity.ok(hola);
+        return ResponseEntity.ok(clientes);
     }
 
-    @PostMapping("/hola1")
-    public ResponseEntity<Cliente> addClient(@RequestBody Cliente cliente) {
+    @PostMapping("/add")
+    public ResponseEntity<Cliente> addCliente(@RequestBody Cliente cliente) {
         Cliente cliente1 = clienteService.addCliente(cliente);
         return ResponseEntity.status(HttpStatus.CREATED).body(cliente1);
     }
 
-    @PostMapping("/hola")
-    public ResponseEntity<String> validarclientesaquíporfavorusenestemetodouwu(@RequestBody Cliente clienteRequest) {
+    @PostMapping("/validate")
+    public ResponseEntity<String> validateCliente(@RequestBody Cliente clienteRequest) {
         boolean request = clienteService.validateCliente(clienteRequest.getEmail(), clienteRequest.getPassword());
         if (request) {
-            return ResponseEntity.ok("yeppi");
+            return ResponseEntity.ok("Cliente " + clienteRequest.getPnombre() + " añadido");
         } else{
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("yeppin't");
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Error.");
         }
     }
 }
