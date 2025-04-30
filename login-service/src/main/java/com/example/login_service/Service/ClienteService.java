@@ -1,38 +1,34 @@
-package com.example.login_service.Service;
+package com.example.login_service.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.login_service.Model.Cliente;
-import com.example.login_service.Repository.ClienteRepository;
+import com.example.login_service.model.Cliente;
+import com.example.login_service.repository.ClienteRepository;
 
 @Service
 public class ClienteService {
+
     @Autowired
     private ClienteRepository clienteRepository;
 
     public List<Cliente> getClientes() {
-        return clienteRepository.obtenerClientes();
+        return clienteRepository.findAll();
     }
 
-    public Cliente getClientesById(int idCliente) {
-        return clienteRepository.buscarClientePorId(idCliente);
+    public Cliente addCliente(Cliente cliente) {
+        return clienteRepository.save(cliente);
     }
 
-    public Cliente saveClientes(Cliente cliente) {
-        return clienteRepository.agregarCliente(cliente);
+    public boolean validateCliente(String email, String password) {
+        List<Cliente> clientes = getClientes();
+        for (Cliente cliente : clientes) {
+            if (cliente.getEmail().equals(email) && cliente.getPassword().equals(password)) {
+                return true; // esto es true porque tiene que ser true porque lo vi en stackoverflow y no sé que significa.
+            }
+        }
+        return false;
     }
-
-    public Cliente updateCliente(Cliente cliente) {
-        return clienteRepository.actualizarCliente(cliente);
-    }
-
-    public String deleteCliente(int idCliente) {
-        clienteRepository.eliminarCliente(idCliente);
-        return "Cliente" + idCliente + "eliminado.";
-    }
-
-    //TODO: public boolean validateCliente() {}
 }
