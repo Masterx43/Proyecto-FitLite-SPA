@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MembresiasServicesApplication",
+            "request": "launch",
+            "mainClass": "com.example.membresias_services.MembresiasServicesApplication",
+            "projectName": "membresias-services"
+        },
+        {
+            "type": "java",
             "name": "RegisterserviceApplication",
             "request": "launch",
             "mainClass": "com.example.registerservice.RegisterserviceApplication",

@@ -20,12 +20,11 @@ public class RegisterController {
     private RegisterServicers registerServicers;
    
     @PostMapping("/agregarCliente")
-    public ResponseEntity<Cliente> AgregarClient(@RequestBody Cliente cliente) {
+    public ResponseEntity<Cliente> CrearCliente(@RequestBody Cliente cliente) {
 
         registerServicers.CrearCliente(cliente);
         return ResponseEntity.status(HttpStatus.CREATED).body(cliente);
     }
     
-
-
+    
 }
