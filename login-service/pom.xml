@@ -82,8 +82,12 @@
 			<groupId>com.oracle.database.security</groupId>
 			<artifactId>osdt_cert</artifactId>
 			<version>19.8.0.0</version>
-	</dependency>
+		</dependency>
 	<!-- Oracle JDBC Driver -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
 	</dependencies>
 
 

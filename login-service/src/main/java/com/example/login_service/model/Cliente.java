@@ -35,6 +35,9 @@ public class Cliente {
     private String apmaterno;
 
     @Column(nullable = false)
+    private Integer edad; 
+
+    @Column(nullable = false)
     private String email;
 
     @Column(nullable = false)

@@ -9,5 +9,6 @@ import com.example.login_service.model.Cliente;
 
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Integer>{
-    Optional<Boolean>findByEmail(String email);
+    // Método para validar cliente a través del email, no es boolean para poder comparar contraseña encriptada en clienteService.
+    Optional<Cliente>findByEmail(String email);
 }
