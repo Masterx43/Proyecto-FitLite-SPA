@@ -79,7 +79,7 @@ public class PagoController {
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarPago (@PathVariable int id) {
         Boolean validar = pagoServices.borrarPago(id);
-        if (validar = false){
+        if (validar == false){
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.noContent().build();

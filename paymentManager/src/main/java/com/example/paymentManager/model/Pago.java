@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Table
+@Table(name = "Pagos")
 @Data
 @Entity
 public class Pago {
@@ -33,6 +33,6 @@ public class Pago {
     @Column(nullable = false)
     private Date fechaPago;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private int idUsuario;
 }
