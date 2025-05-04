@@ -19,6 +19,12 @@ public class ClienteService {
         this.passwordEncoder = passwordEncoder;
     }
 
+    // TODO: Borrar método al terminar pruebas de autenticación JWT
+    public Cliente guardarCliente(Cliente cliente) {
+        cliente.setPassword(passwordEncoder.encode(cliente.getPassword()));
+        return clienteRepository.save(cliente);
+    }
+
     // isPresent() es para que, en vez de devolver al cliente, devuelva boolean, para validar más adelante
     // Esto devolvería sin el isPresent() = True: Optional<Cliente> ( usar .get() ) || False: Optional<>.isEmpty()
     public Boolean checkClienteByEmail(String email) {
@@ -29,7 +35,7 @@ public class ClienteService {
         return passwordEncoder.encode(rawPasswd);
     }
 
-    public boolean validateCliente(String email, String password) {
+    public boolean authenticateCliente(String email, String password) {
         if (!checkClienteByEmail(email)) { // Validar si existe en base de datos.
             return false; 
         }
