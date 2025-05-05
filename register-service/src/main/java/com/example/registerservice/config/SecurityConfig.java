@@ -1,4 +1,6 @@
-package com.example.login_service.config;
+package com.example.registerservice.config;
+
+import static org.springframework.security.config.Customizer.withDefaults;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,26 +10,24 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-import static org.springframework.security.config.Customizer.withDefaults;
-
-@Configuration // Clase tipo configuración, para ser detectada por SpringBoot 
+@Configuration
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http // Cross-Site Request Forgery
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+        http
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers(HttpMethod.POST,"/api-v1/login").permitAll()
-                .anyRequest().authenticated()
+            .requestMatchers(HttpMethod.POST,"/api-v1/register/agregarCliente").permitAll()
+            .anyRequest().authenticated()
             )
             .httpBasic(withDefaults());
-
-        return http.build();
+            return http.build();
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder() {
+    public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
+
 }

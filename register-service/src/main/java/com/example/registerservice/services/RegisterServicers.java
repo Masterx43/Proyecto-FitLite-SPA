@@ -2,6 +2,7 @@ package com.example.registerservice.services;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.registerservice.model.Cliente;
@@ -13,6 +14,9 @@ public class RegisterServicers {
     @Autowired
     private RegistroRepository registroRepository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
 
     public Cliente CrearCliente(Cliente cliente){
         for(Cliente c : registroRepository.findAll()){
@@ -20,12 +24,27 @@ public class RegisterServicers {
                 throw new IllegalArgumentException("El correo ya ha sido registrado previamente");
             }
         }
+        
+        cliente.setPassword(encrypt(cliente.getPassword()));
+        return registroRepository.save(cliente);
+    }
+
+    public String encrypt(String password){
+        return passwordEncoder.encode(password);
+
+    }
+
+    
+
+    public Cliente save(Cliente cliente) {
+
         return registroRepository.save(cliente);
     }
 
 
+    
 
-    //dr prueba
+    //TODO:BORRAR TODO ESTO
     //1
 
     public List<Cliente> obtenercliente(){
@@ -58,11 +77,8 @@ public class RegisterServicers {
         return registroRepository.findById(id).orElse(null); 
     }
 
-    //5
-    public Cliente save(Cliente cliente) {
-        return registroRepository.save(cliente);
-    }
-
+   
+  
 
 
 

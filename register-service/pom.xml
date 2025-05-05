@@ -77,6 +77,11 @@
 			<version>19.8.0.0</version>
 		</dependency>
 	<!-- Oracle JDBC Driver -->
+	<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
 
 	</dependencies>
 
@@ -109,4 +114,8 @@
 		</plugins>
 	</build>
 
+
+	
+		
+	
 </project>
