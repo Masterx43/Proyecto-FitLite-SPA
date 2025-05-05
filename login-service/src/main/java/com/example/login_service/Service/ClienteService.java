@@ -7,17 +7,15 @@ import org.springframework.stereotype.Service;
 import com.example.login_service.model.Cliente;
 import com.example.login_service.repository.ClienteRepository;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class ClienteService {
 
     @Autowired
     private final ClienteRepository clienteRepository;
     private final PasswordEncoder passwordEncoder;
-
-    public ClienteService(ClienteRepository clienteRepository, PasswordEncoder passwordEncoder) {
-        this.clienteRepository = clienteRepository;
-        this.passwordEncoder = passwordEncoder;
-    }
 
     // isPresent() es para que, en vez de devolver al cliente, devuelva boolean, para validar más adelante
     // Esto devolvería sin el isPresent() = True: Optional<Cliente> ( usar .get() ) || False: Optional<>.isEmpty()
