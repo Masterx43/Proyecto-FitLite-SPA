@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PerfilclienteServicesApplication",
+            "request": "launch",
+            "mainClass": "com.example.perfilcliente_services.PerfilclienteServicesApplication",
+            "projectName": "perfilcliente-services"
+        },
+        {
+            "type": "java",
             "name": "MembresiasServicesApplication",
             "request": "launch",
             "mainClass": "com.example.membresias_services.MembresiasServicesApplication",
